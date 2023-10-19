@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>MyStack.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">stacktdd</a> &gt; <a href="index.source.html" class="el_package">com.example</a> &gt; <span class="el_source">MyStack.java</span></div><h1>MyStack.java</h1><pre class="source lang-java linenums">package com.example;
+
+public class MyStack {
+    public Object[] stack;
+    public int top;
+    
+
+<span class="fc" id="L8">   public MyStack(){</span>
+       
+<span class="fc" id="L10">        stack=new Object[10];</span>
+<span class="fc" id="L11">        top=-1;</span>
+<span class="fc" id="L12">    }</span>
+    
+   public boolean empty(){
+<span class="fc" id="L15">    boolean isempty=true;</span>
+<span class="fc bfc" id="L16" title="All 2 branches covered.">        for (int i = 0; i &lt; stack.length; i++) {</span>
+<span class="fc bfc" id="L17" title="All 2 branches covered.">            if(stack[i]!=null){</span>
+<span class="fc" id="L18">                isempty=false;</span>
+<span class="fc" id="L19">                break;</span>
+            }
+        }
+<span class="fc" id="L22">        return isempty;</span>
+    }
+
+    public void push(int item){
+<span class="fc" id="L26">        top=top+1;</span>
+<span class="fc" id="L27">        stack[top]=item;</span>
+<span class="fc" id="L28">    }</span>
+    
+     public Object peek(){
+<span class="fc" id="L31">        return stack[top];</span>
+    }
+
+    public Object pop(){
+<span class="fc" id="L35">        int popelement=top;</span>
+<span class="fc" id="L36">            top=top-1;</span>
+<span class="fc" id="L37">            Object element=stack[popelement];</span>
+<span class="fc" id="L38">            stack[popelement]=null;</span>
+<span class="fc" id="L39">            return element; </span>
+               
+    }
+
+    public String print(){
+<span class="fc" id="L44">        String arr=&quot;&quot;;</span>
+<span class="fc bfc" id="L45" title="All 2 branches covered.">        for (int i = 0; i &lt; top+1; i++) {</span>
+<span class="fc" id="L46">            arr=arr+&quot; &quot;+stack[i].toString();</span>
+        }
+<span class="fc" id="L48">        return arr;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>
